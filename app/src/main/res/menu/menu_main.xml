@@ -1,0 +1,15 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.mandy.talentshow.MainActivity">
+    <item
+        android:id="@+id/news"
+        android:orderInCategory="100"
+        android:title="发布新消息"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/aboutUs"
+        android:title="关于我们"
+        android:orderInCategory="100" />
+</menu>

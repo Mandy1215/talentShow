@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/deadtime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="点击选择活动失效时间" />
+    <EditText
+        android:id="@+id/myNews"
+        android:gravity="top"
+        android:hint="请输入你要发布的消息"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+
+    <Button
+        android:id="@+id/save"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="保存"/>
+
+</LinearLayout>

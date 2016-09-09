@@ -1,0 +1,19 @@
+Index: app/src/main/res/layout/content_tab.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/content_tab.xml	(revision )
++++ app/src/main/res/layout/content_tab.xml	(revision )
+@@ -1,11 +1,6 @@
+ <?xml version="1.0" encoding="utf-8"?>
+ <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+-    xmlns:android="http://schemas.android.com/apk/res/android"
+-    xmlns:app="http://schemas.android.com/apk/res-auto"
+-    xmlns:tools="http://schemas.android.com/tools"
+     android:layout_width="match_parent"
+-    android:fitsSystemWindows="true"
+-    tools:context="com.example.mandy.talentshow.MainActivity"
+     android:layout_height="match_parent">
+ 
+ 
