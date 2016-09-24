@@ -25,42 +25,33 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-                <LinearLayout
+                <com.example.mandy.talentshow.BBS
                     android:id="@+id/bbs"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-                        <ListView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:id="@+id/list_bbs">
-                        </ListView>
-                    </LinearLayout>
-                </LinearLayout>
+                </com.example.mandy.talentshow.BBS>
 
-                <LinearLayout
+                <com.example.mandy.talentshow.Friends
                     android:id="@+id/friends"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
-                </LinearLayout>
+                </com.example.mandy.talentshow.Friends>
 
-                <LinearLayout
+                <com.example.mandy.talentshow.Chat
                     android:id="@+id/chat"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
-                </LinearLayout>
+                </com.example.mandy.talentshow.Chat>
 
-                <LinearLayout
+                <com.example.mandy.talentshow.Mine
                     android:id="@+id/mine"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
-                </LinearLayout>
+                </com.example.mandy.talentshow.Mine>
 
             </FrameLayout>
         </RelativeLayout>

@@ -2,15 +2,37 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:orientation="vertical"
-    android:layout_height="match_parent">
+    android:layout_height="160dp">
 
-    <Button
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-    <ListView
-        android:id="@+id/bbs_list"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
-    </ListView>
+        <ImageView
+            android:id="@+id/photo"
+            android:src="@drawable/photo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/my_name"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:text="昵称"/>
+    </LinearLayout>
+    <TextView
+        android:id="@+id/bbs_content"
+        android:text="发布的内容"
+        android:layout_width="match_parent"
+        android:layout_height="90dp" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/rating_bar"
+            android:layout_alignParentRight="true"
+            android:text="评价"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
 </LinearLayout>

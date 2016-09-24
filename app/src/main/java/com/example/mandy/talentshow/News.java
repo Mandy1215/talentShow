@@ -3,9 +3,7 @@ package com.example.mandy.talentshow;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
-import android.content.ContentValues;
 import android.content.DialogInterface;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.text.InputType;
 import android.view.MotionEvent;
@@ -13,34 +11,59 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.Toast;
 
 
 import java.util.Calendar;
 
-public class News extends Activity implements View.OnTouchListener ,View.OnClickListener{
+import cn.bmob.v3.Bmob;
+import cn.bmob.v3.exception.BmobException;
+import cn.bmob.v3.listener.SaveListener;
+
+public class News extends Activity implements View.OnTouchListener {
     private EditText deadtime;
     private EditText myNews;
     private Button save;
-    private String startTime;
-    private String endTime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.news);
-
         deadtime = (EditText) findViewById(R.id.deadtime);
         deadtime.setOnTouchListener(this);
         myNews = (EditText) findViewById(R.id.myNews);
         save = (Button) findViewById(R.id.save);
-        save.setOnClickListener(this);
+
+ /*       //默认初始化
+        Bmob.initialize(this, BmobInfo.appID);
+        save.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String dead_time = deadtime.getText().toString();
+                String my_new = myNews.getText().toString();
+                SaveNews saveNews = new SaveNews();
+                saveNews.setDeadline(dead_time);
+                saveNews.setContent(my_new);
+                saveNews.save(new SaveListener<String>() {
+                    @Override
+                    public void done(String s, BmobException e) {
+                        if (e == null) {
+                            Toast.makeText(News.this, "no ", Toast.LENGTH_LONG).show();
+                        } else {
+                            Toast.makeText(News.this, "ok ", Toast.LENGTH_LONG).show();
+                        }
+                    }
+                });
+            }
+        });
+*/
     }
 
     public boolean onTouch(View v, MotionEvent event) {
         if (event.getAction() == MotionEvent.ACTION_DOWN) {
 
-            AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            View view = View.inflate(this, R.layout.set_time, null);
+            AlertDialog.Builder builder = new AlertDialog.Builder(News.this);
+            View view = View.inflate(News.this, R.layout.set_time, null);
             final DatePicker datePicker = (DatePicker) view.findViewById(R.id.datePicket);
             builder.setView(view);
 
@@ -48,9 +71,6 @@ public class News extends Activity implements View.OnTouchListener ,View.OnClick
             cal.setTimeInMillis(System.currentTimeMillis());
             datePicker.init(cal.get(Calendar.YEAR), cal.get(Calendar.MONTH),
                     cal.get(Calendar.DAY_OF_MONTH), null);
-
-
-
             if (v.getId() == R.id.deadtime) {
                 final int inType = deadtime.getInputType();
                 deadtime.setInputType(InputType.TYPE_NULL);
@@ -82,29 +102,7 @@ public class News extends Activity implements View.OnTouchListener ,View.OnClick
     }
 
 
-    @Override
-    public void onClick(View v) {
-        switch(v.getId()){
-            case R.id.save:
-              //  addSQLDB();
-                break;
-        }
-    }
 
-  /*  private void addSQLDB() {
-        ContentValues contentValues = new ContentValues();
-        contentValues.put(SQLDB.CONTEXT, myNews.getText().toString());
-      //  contentValues.put(SQLDB.START_TIME, getStartTime());
-        contentValues.put(SQLDB.END_TIME, getEndTime());
-        dbWriter.insert(SQLDB.TABLE_NAME , null , contentValues);
-    }
 
-    public String getStartTime() {
-        return startTime;
-    }
 
-    public String getEndTime() {
-        endTime = deadtime.getText().toString();
-        return endTime;
-    }*/
 }
